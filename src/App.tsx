@@ -242,7 +242,7 @@ function App() {
                     <img
                       src={selectedImage.url}
                       alt={selectedImage.prompt}
-                      className="w-full h-96 object-cover rounded-2xl shadow-2xl group-hover:shadow-purple-500/20 transition-shadow duration-500"
+                      className="w-full h-full object-cover rounded-2xl shadow-2xl group-hover:shadow-purple-500/20 transition-shadow duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                       <p className="text-white font-medium">{selectedImage.prompt}</p>
