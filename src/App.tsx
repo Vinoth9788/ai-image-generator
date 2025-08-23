@@ -10,6 +10,7 @@ interface GeneratedImage {
   timestamp: Date;
 }
 
+
 function App() {
   const [prompt, setPrompt] = useState('');
   const [negativePrompt, setNegativePrompt] = useState('cartoon, anime, illustration, drawing, painting, artwork, sketch, rendered, fake, unrealistic, low quality, blurry');
@@ -118,11 +119,11 @@ function App() {
                         onChange={(e) => setPrompt(e.target.value)}
                         placeholder="A portrait of a person in a magical forest, or a landscape view of mountains at sunset..."
                         className="w-full p-4 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none backdrop-blur-sm transition-all duration-300"
-                        rows={4}
-                        maxLength={500}
+                        
+                        
                       />
                       <div className="absolute bottom-3 right-3 text-slate-400 text-sm">
-                        {prompt.length}/500
+                        
                       </div>
                     </div>
                   </div>
