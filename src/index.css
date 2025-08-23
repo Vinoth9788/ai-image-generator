@@ -2,24 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom styles for backgrounds */
+/* Custom styles for grid background */
 .grid-background {
   background-image: 
     linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
   animation: grid-move 20s linear infinite;
+  background-size: 50px 50px; /* default (desktop/laptop) */
 }
 
+/* Animate the grid */
 @keyframes grid-move {
   0% { transform: translate(0, 0); }
   100% { transform: translate(50px, 50px); }
 }
 
+/* ✅ Responsive background adjustments */
+@media (max-width: 1024px) { /* Tablets / small laptops */
+  .grid-background {
+    background-size: 40px 40px;
+  }
+}
+
+@media (max-width: 768px) { /* Large mobile / portrait tablets */
+  .grid-background {
+    background-size: 30px 30px;
+  }
+}
+
+@media (max-width: 480px) { /* Mobile */
+  .grid-background {
+    background-size: 20px 20px;
+  }
+}
+
+/* Radial gradient */
 .bg-gradient-radial {
   background: radial-gradient(circle, var(--tw-gradient-stops));
 }
 
+/* Glow shadows */
 .shadow-glow-cyan {
   filter: drop-shadow(0 0 10px #00ffff) drop-shadow(0 0 20px #00ffff);
 }

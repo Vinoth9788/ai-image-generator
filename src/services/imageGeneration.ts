@@ -9,6 +9,10 @@ interface ImageGenerationOptions {
   model?: string;
   negativePrompt?: string;
 }
+interface StabilityAITextPrompt {
+  text: string;
+  weight?: number;
+}
 
 // Function to detect orientation from prompt text
 function detectOrientationFromPrompt(prompt: string): { width: number; height: number } {
@@ -175,7 +179,8 @@ export async function generateImageWithDALLE(prompt: string, negativePrompt?: st
 // Alternative: Stability AI implementation
 export async function generateImageWithStabilityAI(prompt: string, negativePrompt?: string): Promise<string> {
   try {
-    const textPrompts = [{ text: prompt }];
+    const textPrompts: StabilityAITextPrompt[] = [{ text: prompt }];
+
     if (negativePrompt) {
       textPrompts.push({ text: negativePrompt, weight: -1 });
     }
